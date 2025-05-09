@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 30, 30, 30;
+  --background-end-rgb: 30, 30, 30;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Button styles */
+button.text-white,
+.text-white,
+button.bg-white,
+.bg-white {
+  color: #7dd3fc !important; /* ice blue */
+}
+
+.btn-white,
+.btn-primary,
+button.bg-blue-600 {
+  background-color: #0c4a6e !important; /* darker blue background */
+  color: #7dd3fc !important; /* ice blue text */
+}
+
+.hover\:bg-blue-700:hover,
+.hover\:text-white:hover {
+  background-color: #075985 !important; /* darker blue on hover */
+  color: #bae6fd !important; /* lighter ice blue on hover */
+}
+
+/* Update focus ring colors */
+.focus\:ring-blue-500:focus,
+.focus\:border-blue-500:focus {
+  --tw-ring-color: #0ea5e9 !important; /* sky blue ring */
+  --tw-border-opacity: 1;
+  border-color: #0ea5e9 !important; /* sky blue border */
+}
+
+/* Preloader animations */
+@keyframes pulse-slow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.borg-logo-pulse {
+  animation: pulse-slow 2s infinite ease-in-out;
+}
+
+.animate-ping-slow {
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ReactFlow customizations */
+.react-flow__node {
+  transition: box-shadow 0.3s ease;
+}
+
+.react-flow__node.selected {
+  box-shadow: 0 0 0 2px #00ff9d !important;
+}
+
+.react-flow__edge-path {
+  transition: stroke-width 0.3s ease, stroke 0.3s ease;
+}
+
+.react-flow__controls {
+  background: #1e1e1e;
+  border-radius: 8px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.react-flow__controls-button {
+  background: #333;
+  border-bottom: 1px solid #444;
+  color: white;
+}
+
+.react-flow__controls-button:hover {
+  background: #444;
+}
+
+/* Prose styles for documentation */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: white;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose h2 {
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5em;
+}
+
+.prose a {
+  color: #00ff9d;
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose code {
+  background: #333;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.prose pre {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+.prose blockquote {
+  border-left-color: #00ff9d;
+  background: rgba(0, 255, 157, 0.05);
+  padding: 1em;
+  border-radius: 0 6px 6px 0;
+}
+
+.prose table {
+  border-collapse: collapse;
+}
+
+.prose table th {
+  background: #333;
+  padding: 0.5em;
+}
+
+.prose table td {
+  border: 1px solid #444;
+  padding: 0.5em;
+}
+
+.prose ul,
+.prose ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
